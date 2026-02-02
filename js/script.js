@@ -55,5 +55,8 @@ const adultDiscount = 40;
 let askKM = prompt('Quanti KM dista la tua meta?')
 
 //Quanti anni hai?
-
 let askAge = prompt('Quanti anni hai?')
+
+//Structure
+console.log(`KM: ${askKM} ETà: ${askAge}`);
+
