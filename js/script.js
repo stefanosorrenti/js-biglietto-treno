@@ -38,7 +38,7 @@ LA MACCHINA DEVE:
 //DATA
 
 //Valore per KM biglietto.
-const kmPrice = parseFloat('0.21€');
+const kmPrice = 0.21;
 
 //Sconto per i minorenni
 const minorDiscont = 20;
@@ -50,10 +50,10 @@ const adultDiscount = 40;
 //PROMPTS
 
 //Quanti KM devi percorrere?
-let askKM = prompt('Quanti KM dista la tua meta?')
+const askKM = parseFloat(prompt('Quanti KM dista la tua meta?'))
 
 //Quanti anni hai?
-let askAge = prompt('Quanti anni hai?')
+const askAge =  parseInt(prompt('Quanti anni hai?'))
 
 //Structure
 console.log(`KM: ${askKM} ETà: ${askAge}`);
@@ -64,7 +64,17 @@ console.log(`KM: ${askKM} ETà: ${askAge}`);
 let ticketPrice = kmPrice * askKM;
 
 
+//SE il valore della mia eta è inferiore a 18
+if (askAge <= 18) {
+    ticketPrice = ticketPrice - (minorDiscont / 100) * ticketPrice; //200 - (20 /100) * 200 = 200 - 0.2 * 200 = 40 = 160
+} else if (askAge >= 65) {
+    ticketPrice = ticketPrice - (adultDiscount / 100) * ticketPrice;
+    
+}
+
+
+
 //Comunicare il prezzo
-console.log(`Prezzo Biglietto ${ticketPrice}€`);
+console.log(`Prezzo Biglietto ${ticketPrice.toFixed(2)}€`);
 
 
