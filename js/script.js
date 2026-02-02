@@ -24,16 +24,13 @@ Devo creare un programma che mi calcola il prezzo del biglietto un base a divers
 //Come posso spiegarlo alla macchina?
 /*
 LA MACCHINA DEVE:
--Domandare la destinazione percorsa in KM
--Domandare la mia età
+-Domandare la destinazione percorsa in KM (X)
+-Domandare la mia età(X)
+-Calcolo il prezzo totale (0,21 x KM)
     -SE il valore della mia eta è inferiore a 18
-        -Calcolo il prezzo totale (0,21 x KM)
         -Applico un 20% di sconto sul prezzo totale
     ALTRIMENTI SE il valore della mia eta è superiore a 65 
-        -Calcolo il prezzo totale (0,21 x KM)
         -Applico uno sconto del 40%
-    ALTRIMENTI
-        -Calcolo il prezzo totale (0,21 x KM)
 -Comunicare il prezzo finale
 
 */
@@ -49,7 +46,8 @@ const minorDiscont = 20;
 //Sconto over 65
 const adultDiscount = 40;
 
-//Prompts
+
+//PROMPTS
 
 //Quanti KM devi percorrere?
 let askKM = prompt('Quanti KM dista la tua meta?')
@@ -59,4 +57,14 @@ let askAge = prompt('Quanti anni hai?')
 
 //Structure
 console.log(`KM: ${askKM} ETà: ${askAge}`);
+
+//LOGIC
+
+//Calcolo del prezzo standard
+let ticketPrice = kmPrice * askKM;
+
+
+//Comunicare il prezzo
+console.log(`Prezzo Biglietto ${ticketPrice}€`);
+
 
