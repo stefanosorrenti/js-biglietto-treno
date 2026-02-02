@@ -36,5 +36,24 @@ LA MACCHINA DEVE:
         -Calcolo il prezzo totale (0,21 x KM)
 -Comunicare il prezzo finale
 
-
 */
+
+//DATA
+
+//Valore per KM biglietto.
+const kmPrice = parseFloat('0.21€');
+
+//Sconto per i minorenni
+const minorDiscont = 20;
+
+//Sconto over 65
+const adultDiscount = 40;
+
+//Prompts
+
+//Quanti KM devi percorrere?
+let askKM = prompt('Quanti KM dista la tua meta?')
+
+//Quanti anni hai?
+
+let askAge = prompt('Quanti anni hai?')
